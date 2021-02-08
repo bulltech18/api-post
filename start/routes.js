@@ -12,3 +12,6 @@ Route.resource('users', 'UserController').apiOnly().validator(new Map([
 
   //Route.post('/post', 'PostController.store' )
   Route.post('/comment', 'CommentController.store' )
+
+  Route.get('/comment/get/:id', 'CommentController.getComments')
+  

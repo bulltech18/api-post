@@ -7,7 +7,7 @@ class PostController {
         const post = new Post()
         post.title = data['title']
         post.body = data['body']
-        post.user_id = user['id']
+        post.user = user['username']
         await post.save()
         return response.created({
             status: true,
@@ -21,7 +21,7 @@ class PostController {
         
         return response.ok({
            status: true,
-           data: posts 
+           data: posts
         })
     }
 
