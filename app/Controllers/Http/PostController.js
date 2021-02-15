@@ -25,6 +25,12 @@ class PostController {
         })
     }
 
+    async delete({request, response, params}){
+        const id = params.id
+        const post = await Post.find(id)
+        await post.delete()
+    }
+
 }
 
 module.exports = PostController

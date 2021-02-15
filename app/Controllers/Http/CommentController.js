@@ -24,6 +24,11 @@ class CommentController {
             data: comments
         })
     }
+    async delete({ params }){
+        const id = params.id
+        const comm = await Comment.find(id)
+        await comm.delete()
+    }
     
 }
 
